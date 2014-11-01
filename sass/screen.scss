@@ -1,0 +1,103 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "recipes";
+@import "lib/font";
+
+$color-text-default: #444;
+
+// Color palette: http://www.colourlovers.com/palette/92095/Giant_Goldfish
+$color-aio: #69D2E7;
+$color-clean-pondwater: #A7DBD8;
+$color-beach-storm: #E0E4CC;
+$color-giant-goldfish: #F38630;
+$color-unreal-food-pills: #FA6900;
+
+@include vertical-align-block-page;
+
+header, section {
+  @include vertical-align-block-wrapper;
+
+  width: 100%;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 4vw;
+
+  &:nth-child(even) {
+    background-color: $color-clean-pondwater;
+    color: $color-text-default;
+
+    p {
+      a {
+        color: $color-text-default;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: $color-giant-goldfish;
+    color: $color-beach-storm;
+
+    p {
+      a {
+        color: $color-beach-storm;
+      }
+    }
+  }
+
+  .v-center {
+    @include vertical-align-block;
+
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 50px;
+    line-height: 130%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+      opacity: 0.8;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+header {
+  .v-center {
+    padding: 10%;
+  }
+}
+
+section {
+
+  &:nth-child(even) {
+    p {
+      border-color: $color-aio;
+    }
+  }
+
+  &:nth-child(odd) {
+    p {
+      border-color: $color-unreal-food-pills;
+    }
+  }
+
+  p {
+    padding: 3%;
+    margin: 0 10%;
+
+    border-width: 3px;
+    border-style: solid;
+  }
+}
